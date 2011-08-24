@@ -1,0 +1,37 @@
+Ben Bitdiddle has invented a test to determine whether the interpreter he is
+faced with is using applicative-order evaluation or normal-order evaluation. He
+defines the following two procedures:
+
+(define (p) (p))
+
+(define (test x y)
+  (if (= x 0)
+      0
+      y))
+
+Then he evaluates the expression
+
+(test 0 (p))
+
+What behavior will Ben observe with an interpreter that uses applicative-order
+evaluation? What behavior will he observe with an interpreter that uses
+normal-order evaluation? Explain your answer. (Assume that the evaluation rule
+for the special form if is the same whether the interpreter is using normal or
+applicative order: The predicate expression is evaluated first, and the result
+determines whether to evaluate the consequent or the alternative expression.)
+
+
+Answer:
+
+The procedure (define (p) (p)) is a non-terminating recursive function. If he is
+using an applicative-order interpreter, he will observe an infinite recursion as
+the interpreter attempts to evaluate the (p) argument expression in the call to
+(test 0 (p)).  If he is using a normal-order interpreter, (test 0 (p)) will be 
+expanded to 
+
+(if (= 0 0)
+    0
+    (p))
+    
+and since zero is equal to zero, the alternative branch of the conditional is
+never hit, and thus the call to (p) is never invoked.

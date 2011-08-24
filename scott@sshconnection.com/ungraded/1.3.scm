@@ -1,5 +1,0 @@
-(define (square x) (* x x))
-(define (sum-largest-squares a b c)
-  (cond ((and (> a c) (> b c)) (+ (square a) (square b)))
-        ((and (< a b) (< a c)) (+ (square b) (square c)))
-        (else (+ (square a) (square c)))))

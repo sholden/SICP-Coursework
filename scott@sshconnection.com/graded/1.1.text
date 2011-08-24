@@ -1,4 +1,6 @@
-Below is a sequence of expressions. What is the result printed by the interpreter in response to each expression? Assume that the sequence is to be evaluated in the order in which it is presented.
+Below is a sequence of expressions. What is the result printed by the
+interpreter in response to each expression? Assume that the sequence is to be
+evaluated in the order in which it is presented.
 
 10                                           = 10
 (+ 5 3 4)                                    = 12
@@ -21,3 +23,9 @@ Below is a sequence of expressions. What is the result printed by the interprete
          (else -1))
    (+ a 1))                                  = 16
 
+
+Grading (CAG):
+
+These are the same answers I got, but I bet you had to cheat a little on (define
+a 3) to see what the return value of a define was, and also to see what true and
+false looked like in the interpreter :).
